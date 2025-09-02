@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+/* Paleta Sprint 2 */
+:root{
+  --brand:#0a3a82;     /* azul navbar/rodapé/botão */
+  --brand-200:#e6f2ff; /* azul claro dos blocos */
+}
+
+html, body { height: 100%; }
+:focus-visible { outline: 2px solid; outline-offset: 2px; }
