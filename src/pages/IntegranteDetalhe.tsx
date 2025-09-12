@@ -1,45 +1,87 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { TEAM } from "../data/team";
 
 export default function IntegranteDetalhe() {
   const { rm } = useParams();
-  const nav = useNavigate();
-  const p = TEAM.find((x) => x.rm === rm);
+  const member = TEAM.find((m) => m.rm === rm);
 
-  if (!p) {
+  if (!member) {
     return (
-      <div className="space-y-4">
-        <p>Integrante não encontrado.</p>
-        <button onClick={() => nav(-1)} className="underline" style={{ color: "var(--brand)" }}>
-          Voltar
-        </button>
-      </div>
+      <main className="mx-auto max-w-3xl px-4 py-10">
+        <section className="rounded-3xl bg-gradient-to-b from-sky-50 to-white p-8 ring-1 ring-slate-200 shadow-sm">
+          <h1 className="text-2xl md:text-3xl font-extrabold text-slate-900">Integrante não encontrado</h1>
+          <p className="mt-2 text-slate-700">O integrante informado não existe ou foi movido.</p>
+          <Link to="/integrantes" className="mt-4 inline-block font-semibold text-sky-900 hover:underline">
+            ← Voltar para Integrantes
+          </Link>
+        </section>
+      </main>
     );
   }
 
   return (
-    <section className="grid gap-6 md:grid-cols-[320px,1fr]">
-      <img src={p.foto} alt={`Foto de ${p.nome}`} className="w-full h-80 object-cover rounded-2xl border" />
-      <div className="space-y-3">
-        <h1 className="text-3xl font-extrabold" style={{ color: "var(--brand)" }}>{p.nome}</h1>
-        <p className="text-slate-600">RM: {p.rm} | Turma: 1TDSR</p>
-        <p className="text-slate-800">{p.bio}</p>
-        <div className="flex gap-4">
-          <a href={p.gh} target="_blank" rel="noopener noreferrer" aria-label={`GitHub de ${p.nome}`}>
-            <img src="/img/icone-github.png" alt="" className="h-7 w-7" />
-          </a>
-          <a href={p.li} target="_blank" rel="noopener noreferrer" aria-label={`LinkedIn de ${p.nome}`}>
-            <img src="/img/icone-linkedin.jpg" alt="" className="h-7 w-7 rounded" />
-          </a>
+    <main className="mx-auto max-w-5xl px-4 py-10 space-y-10">
+      {/* HERO */}
+      <section className="rounded-3xl bg-gradient-to-b from-sky-50 to-white p-8 md:p-12 ring-1 ring-slate-200 shadow-sm">
+        <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-white/70 px-3 py-1 text-sm font-semibold text-sky-900 ring-1 ring-slate-200">
+          Perfil de integrante
         </div>
-        <button
-          onClick={() => nav("/integrantes")}
-          className="mt-4 rounded-md px-4 py-2 text-white font-semibold"
-          style={{ backgroundColor: "var(--brand)" }}
-        >
-          Voltar para Integrantes
-        </button>
-      </div>
-    </section>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+          {member.nome}
+        </h1>
+        <p className="mt-2 text-slate-700">RM {member.rm} · Turma 1TDSR</p>
+
+        <Link to="/integrantes" className="mt-6 inline-flex items-center gap-1 font-semibold text-sky-900 hover:underline">
+          ← Voltar para Integrantes
+        </Link>
+      </section>
+
+      {/* CONTEÚDO */}
+      <section className="grid gap-8 md:grid-cols-2">
+        <div className="overflow-hidden rounded-2xl ring-1 ring-slate-200 bg-white shadow-sm">
+          <img
+            src={member.foto}
+            alt={`Foto de ${member.nome}`}
+            className="h-full w-full object-cover"
+            style={{ maxHeight: 520 }}
+          />
+        </div>
+
+        <div className="space-y-4">
+          <div className="rounded-2xl bg-white p-6 ring-1 ring-slate-200 shadow-sm">
+            <h2 className="text-xl font-extrabold text-slate-900">Sobre</h2>
+            <p className="mt-2 text-slate-700 leading-relaxed">{member.bio}</p>
+          </div>
+
+          <div className="rounded-2xl bg-white p-6 ring-1 ring-slate-200 shadow-sm">
+            <h3 className="text-lg font-extrabold text-slate-900">Links</h3>
+            <div className="mt-3 flex items-center gap-3">
+              {member.gh && (
+                <a
+                  href={member.gh}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-slate-200 hover:bg-slate-50"
+                  aria-label={`GitHub de ${member.nome}`}
+                >
+                  <img src="/img/icone-github.png" className="h-5 w-5" alt="" />
+                </a>
+              )}
+              {member.li && (
+                <a
+                  href={member.li}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-slate-200 hover:bg-slate-50"
+                  aria-label={`LinkedIn de ${member.nome}`}
+                >
+                  <img src="/img/icone-linkedin.jpg" className="h-5 w-5 rounded-sm" alt="" />
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }

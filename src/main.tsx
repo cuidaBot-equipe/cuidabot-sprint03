@@ -1,13 +1,33 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import App from "./App";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 import "./index.css";
 
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </StrictMode>
+import Home from "./pages/Home";
+import Integrantes from "./pages/Integrantes";
+import IntegranteDetalhe from "./pages/IntegranteDetalhe";
+import FAQ from "./pages/FAQ";
+import Contato from "./pages/Contato";
+import Solucao from "./pages/Solucoes";
+import App from "./App"; // se o App contém o Header e o Outlet, mantenha
+
+const router = createBrowserRouter([
+  {
+    element: <App />, // seu App deve renderizar <Header /> e um <Outlet />
+    children: [
+      { path: "/", element: <Home /> },
+      { path: "/integrantes", element: <Integrantes /> },
+      { path: "/integrantes/:rm", element: <IntegranteDetalhe /> },
+      { path: "/faq", element: <FAQ /> },
+      { path: "/contato", element: <Contato /> },
+      { path: "/solucao", element: <Solucao /> },
+    ],
+  },
+]);
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
 );

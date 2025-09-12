@@ -1,52 +1,90 @@
-import { TEAM } from "../data/team";
 import { Link } from "react-router-dom";
+import { TEAM } from "../data/team";
 
 export default function Integrantes() {
   return (
-    <section className="space-y-6">
-      <header className="max-w-3xl">
-        <h1 className="text-3xl font-extrabold" style={{ color: "var(--brand)" }}>
-          Nosso Time
+    <main className="mx-auto max-w-6xl px-4 py-10 space-y-10">
+      {/* HERO */}
+      <section className="rounded-3xl bg-gradient-to-b from-sky-50 to-white p-8 md:p-12 ring-1 ring-slate-200 shadow-sm">
+        <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-white/70 px-3 py-1 text-sm font-semibold text-sky-900 ring-1 ring-slate-200">
+          👥 Equipe 
+        </div>
+
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+          Equipe CuidaBot
         </h1>
-        <p className="mt-2 text-slate-700">
-          A equipe responsável pelo desenvolvimento do CuidaBot é formada por alunas do curso de
-          Análise e Desenvolvimento de Sistemas, com foco em soluções acessíveis, funcionais e
-          centradas no usuário. Atuamos de forma colaborativa para criar um assistente digital que
-          promova inclusão, autonomia e inovação no ambiente hospitalar.
+
+        <p className="mt-3 max-w-3xl text-lg leading-relaxed text-slate-700">
+          Time responsável pelo CuidaBot, com foco em usabilidade, acessibilidade e entrega
+          contínua. Construímos interfaces claras e inclusivas, guiadas por dados e boas
+          práticas de design.
         </p>
-      </header>
+      </section>
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {TEAM.map((p) => (
-          <Link
-            key={p.rm}
-            to={`/integrantes/${p.rm}`}
-            className="rounded-2xl border bg-white shadow-sm hover:shadow-md transition"
+      {/* CARDS */}
+      <section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {TEAM.map((m) => (
+          <article
+            key={m.rm}
+            className="group overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200 shadow-sm hover:shadow-md transition-shadow"
           >
-            <article>
+            <div className="aspect-[16/11] w-full overflow-hidden bg-slate-100">
               <img
-                src={p.foto}
-                alt={`Foto de ${p.nome}`}
-                className="w-full h-56 object-cover rounded-t-2xl"
+                src={m.foto}
+                alt={`Foto de ${m.nome}`}
+                className="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-[1.03]"
+                loading="lazy"
               />
-              <div className="p-5 flex flex-col items-center">
-                <h3 className="font-extrabold text-slate-900">{p.nome}</h3>
-                <p className="text-slate-600 text-sm">RM: {p.rm} | Turma: 1TDSR</p>
-                <p className="mt-3 text-sm text-slate-700 leading-relaxed text-justify">{p.bio}</p>
+            </div>
 
-                <div className="mt-4 flex gap-4">
-                  <a href={p.gh} target="_blank" rel="noopener noreferrer" aria-label={`GitHub de ${p.nome}`} onClick={(e)=>e.stopPropagation()}>
-                    <img src="/img/icone-github.png" alt="" className="h-7 w-7 hover:scale-110 transition" />
+            <div className="p-5 space-y-2">
+              <h2 className="text-xl font-extrabold text-slate-900">{m.nome}</h2>
+              <p className="text-sm text-slate-600">RM {m.rm} · 1TDSR</p>
+              <p className="text-slate-700 leading-relaxed line-clamp-3">{m.bio}</p>
+
+              <div className="mt-3 flex items-center gap-3">
+                {m.gh && (
+                  <a
+                    href={m.gh}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-full ring-1 ring-slate-200 hover:bg-slate-50"
+                    aria-label={`GitHub de ${m.nome}`}
+                  >
+                    <img src="/img/icone-github.png" alt="" className="h-5 w-5" />
                   </a>
-                  <a href={p.li} target="_blank" rel="noopener noreferrer" aria-label={`LinkedIn de ${p.nome}`} onClick={(e)=>e.stopPropagation()}>
-                    <img src="/img/icone-linkedin.jpg" alt="" className="h-7 w-7 hover:scale-110 transition rounded" />
+                )}
+                {m.li && (
+                  <a
+                    href={m.li}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-full ring-1 ring-slate-200 hover:bg-slate-50"
+                    aria-label={`LinkedIn de ${m.nome}`}
+                  >
+                    <img src="/img/icone-linkedin.jpg" alt="" className="h-5 w-5 rounded-sm" />
                   </a>
-                </div>
+                )}
+
+                <Link
+                  to={`/integrantes/${m.rm}`}
+                  className="ml-auto inline-flex items-center gap-1 font-semibold text-sky-900 hover:underline"
+                  aria-label={`Ver perfil de ${m.nome}`}
+                >
+                  Ver perfil
+                  <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                    <path
+                      fillRule="evenodd"
+                      d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414-1.414L13.586 10H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </Link>
               </div>
-            </article>
-          </Link>
+            </div>
+          </article>
         ))}
-      </div>
-    </section>
+      </section>
+    </main>
   );
 }
