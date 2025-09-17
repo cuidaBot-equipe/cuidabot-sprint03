@@ -4,7 +4,6 @@ import { TEAM } from "../data/team";
 export default function Integrantes() {
   return (
     <main className="mx-auto max-w-6xl px-4 py-10 space-y-10">
-      {/* HERO */}
       <section className="rounded-3xl bg-gradient-to-b from-sky-50 to-white p-8 md:p-12 ring-1 ring-slate-200 shadow-sm">
         <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-white/70 px-3 py-1 text-sm font-semibold text-sky-900 ring-1 ring-slate-200">
           👥 Equipe 
@@ -21,7 +20,6 @@ export default function Integrantes() {
         </p>
       </section>
 
-      {/* CARDS */}
       <section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {TEAM.map((m) => (
           <article

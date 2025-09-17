@@ -10,11 +10,11 @@ import IntegranteDetalhe from "./pages/IntegranteDetalhe";
 import FAQ from "./pages/FAQ";
 import Contato from "./pages/Contato";
 import Solucao from "./pages/Solucoes";
-import App from "./App"; // se o App contém o Header e o Outlet, mantenha
+import App from "./App"; 
 
 const router = createBrowserRouter([
   {
-    element: <App />, // seu App deve renderizar <Header /> e um <Outlet />
+    element: <App />, 
     children: [
       { path: "/", element: <Home /> },
       { path: "/integrantes", element: <Integrantes /> },

@@ -13,7 +13,6 @@ export default function Header() {
           <NavLink to="/integrantes" className={linkCls}>Integrantes</NavLink>
           <NavLink to="/faq" className={linkCls}>FAQ</NavLink>
           <NavLink to="/contato" className={linkCls}>Contato</NavLink>
-          {/* IMPORTANTE: sem acento, exatamente /solucao */}
           <NavLink to="/solucao" className={linkCls}>Solução</NavLink>
         </div>
       </nav>

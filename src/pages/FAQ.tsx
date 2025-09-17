@@ -1,10 +1,9 @@
-// src/pages/FAQ.tsx
 import { useState, type ReactNode } from "react";
 
 type Item = {
   id: string;
   question: string;
-  answer: ReactNode; // <-- trocado de JSX.Element para ReactNode
+  answer: ReactNode; 
 };
 
 const ITEMS: Item[] = [
@@ -87,7 +86,6 @@ export default function FAQ() {
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-10 space-y-10">
-      {/* HERO */}
       <section className="rounded-3xl bg-gradient-to-b from-sky-50 to-white p-8 md:p-12 ring-1 ring-slate-200 shadow-sm">
         <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-white/70 px-3 py-1 text-sm font-semibold text-sky-900 ring-1 ring-slate-200">
           💬 FAQ
@@ -101,7 +99,6 @@ export default function FAQ() {
         </p>
       </section>
 
-      {/* LISTA */}
       <section className="space-y-4">
         {ITEMS.map((item) => {
           const isOpen = openId === item.id;

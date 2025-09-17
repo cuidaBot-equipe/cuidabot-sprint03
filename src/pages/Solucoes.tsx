@@ -1,10 +1,8 @@
-// src/pages/Solucoes.tsx
 import { Link } from "react-router-dom";
 
 export default function Solucoes() {
   return (
     <main className="mx-auto max-w-6xl px-4 py-10 space-y-12">
-      {/* HERO / INTRO */}
       <section className="rounded-3xl bg-gradient-to-b from-sky-50 to-white p-8 md:p-12 ring-1 ring-slate-200 shadow-sm">
         <div className="mb-6 flex flex-wrap items-center gap-2">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/70 px-3 py-1 text-sm font-semibold text-sky-900 ring-1 ring-slate-200">
@@ -42,7 +40,6 @@ export default function Solucoes() {
           </Link>
         </div>
 
-        {/* Feature highlights – mesmo estilo da Home */}
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           <article className="rounded-2xl bg-white p-6 ring-1 ring-slate-200 shadow-sm">
             <h3 className="text-xl font-bold text-sky-900">Acesso facilitado</h3>
@@ -67,7 +64,6 @@ export default function Solucoes() {
         </div>
       </section>
 
-      {/* COMO FUNCIONA NA PRÁTICA */}
       <section>
         <header className="mb-4">
           <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900">
@@ -111,7 +107,6 @@ export default function Solucoes() {
         </div>
       </section>
 
-      {/* RECURSOS TÉCNICOS */}
       <section>
         <header className="mb-4">
           <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900">Recursos técnicos</h2>
@@ -142,7 +137,6 @@ export default function Solucoes() {
         </div>
       </section>
 
-      {/* ACESSIBILIDADE */}
       <section>
         <header className="mb-4">
           <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900">Acessibilidade</h2>
@@ -174,7 +168,6 @@ export default function Solucoes() {
         </div>
       </section>
 
-      {/* CTA FINAL */}
       <section className="rounded-2xl bg-gradient-to-b from-sky-50 to-white p-8 ring-1 ring-slate-200 shadow-sm">
         <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
           <div>

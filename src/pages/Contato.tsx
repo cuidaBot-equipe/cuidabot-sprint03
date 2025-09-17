@@ -36,7 +36,6 @@ export default function Contato() {
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-10 space-y-10">
-      {/* HERO */}
       <section className="rounded-3xl bg-gradient-to-b from-sky-50 to-white p-8 md:p-12 ring-1 ring-slate-200 shadow-sm">
         <div className="mb-6 flex flex-wrap items-center gap-2">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/70 px-3 py-1 text-sm font-semibold text-sky-900 ring-1 ring-slate-200">
@@ -56,9 +55,7 @@ export default function Contato() {
         </p>
       </section>
 
-      {/* GRID PRINCIPAL */}
       <section className="grid gap-6 md:grid-cols-3">
-        {/* FORMULÁRIO */}
         <div className="md:col-span-2 rounded-3xl bg-white p-6 md:p-8 ring-1 ring-slate-200 shadow-sm">
           <form onSubmit={handleSubmit} noValidate className="space-y-5">
             <div>

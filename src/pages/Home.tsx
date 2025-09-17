@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 export default function Home() {
   return (
     <main className="mx-auto max-w-6xl px-4 py-10 space-y-14">
-      {/* HERO — destaque com gradiente discreto */}
       <section className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
         <div
           aria-hidden
@@ -39,7 +38,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* KPIs */}
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
             {[
               { n: "100%", l: "Sem dependência de frameworks externos" },
@@ -58,7 +56,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FEATURES — valor em quadrantes */}
       <section className="space-y-6">
         <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900">
           O que o CuidaBot entrega
@@ -103,7 +100,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* COMO FUNCIONA — timeline curta */}
       <section className="space-y-6">
         <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900">
           Como funciona
@@ -127,7 +123,6 @@ export default function Home() {
         </ol>
       </section>
 
-      {/* PARA QUEM É — segmentação */}
       <section className="space-y-6">
         <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900">Para quem é</h2>
         <div className="grid gap-4 md:grid-cols-3">
@@ -147,7 +142,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* DEPOIMENTO / PROVA SOCIAL */}
       <section className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
         <blockquote className="space-y-3">
           <p className="text-lg text-slate-800 leading-relaxed">
@@ -160,7 +154,6 @@ export default function Home() {
         </blockquote>
       </section>
 
-      {/* TEASER FAQ + CTA FINAL */}
       <section className="grid gap-6 md:grid-cols-2">
         <article className="rounded-2xl border border-slate-200 bg-sky-50/60 p-6 shadow-sm">
           <h3 className="text-xl font-extrabold text-slate-900">Dúvidas frequentes</h3>

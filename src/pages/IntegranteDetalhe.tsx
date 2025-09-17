@@ -21,7 +21,6 @@ export default function IntegranteDetalhe() {
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-10 space-y-10">
-      {/* HERO */}
       <section className="rounded-3xl bg-gradient-to-b from-sky-50 to-white p-8 md:p-12 ring-1 ring-slate-200 shadow-sm">
         <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-white/70 px-3 py-1 text-sm font-semibold text-sky-900 ring-1 ring-slate-200">
           Perfil de integrante
@@ -36,7 +35,6 @@ export default function IntegranteDetalhe() {
         </Link>
       </section>
 
-      {/* CONTEÚDO */}
       <section className="grid gap-8 md:grid-cols-2">
         <div className="overflow-hidden rounded-2xl ring-1 ring-slate-200 bg-white shadow-sm">
           <img
