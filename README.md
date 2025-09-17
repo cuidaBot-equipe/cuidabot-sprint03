@@ -6,7 +6,6 @@ Aplicação **SPA (Single Page Application)** desenvolvida com **React + Vite + 
 O **CuidaBot** é um assistente digital acessível e inteligente, voltado para ampliar a autonomia de pacientes no uso de serviços de saúde, promovendo **inclusão, usabilidade e acessibilidade**.
 
 ---
-<! Nota: Documentação atualizada em Sprint 03 -->
 ## 🚀 Tecnologias
 
 - React 18 + Vite  
