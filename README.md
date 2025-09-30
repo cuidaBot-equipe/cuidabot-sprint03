@@ -64,6 +64,12 @@ frontend/sprint03/
  Ícones e imagens organizados em public/img
 
 
+---
+
+## 🔗 Links Importantes
+
+- [Repositório GitHub](https://github.com/cuidaBot-equipe/cuidabot-sprint03)  
+- [Vídeo de apresentação no YouTube](https://youtu.be/vwxfWtZjHIg?si=3W58cN66KdtQYcZV)
 
 
  Desenvolvido com dedicação pela equipe CuidaBot — FIAP 💙
