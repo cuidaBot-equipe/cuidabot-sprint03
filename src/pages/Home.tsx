@@ -1,6 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import BotaoPrimario from "../components/BotaoPrimario"; 
 
 export default function Home() {
+  const navigate = useNavigate();
+
   return (
     <main className="mx-auto max-w-6xl px-4 py-10 space-y-14">
       <section className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
@@ -23,12 +26,9 @@ export default function Home() {
             </p>
 
             <div className="flex flex-wrap items-center gap-3 pt-2">
-              <Link
-                to="/solucao"
-                className="inline-flex items-center gap-2 rounded-xl bg-sky-900 px-6 py-3 text-white font-semibold shadow hover:bg-sky-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-700"
-              >
-                Conhecer a solução <span aria-hidden>→</span>
-              </Link>
+              {/* ✅ Botão com navegação programática via componente */}
+              <BotaoPrimario texto="Conhecer a solução" onClick={() => navigate("/solucao")} />
+
               <Link
                 to="/contato"
                 className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 font-semibold text-slate-900 hover:bg-slate-50"

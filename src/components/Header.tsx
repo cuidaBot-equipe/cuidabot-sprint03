@@ -1,21 +1,23 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export default function Header() {
-  const linkCls =
-    "px-3 py-1 rounded-md hover:bg-blue-100 transition-colors aria-[current=page]:bg-white aria-[current=page]:text-blue-900";
+interface HeaderProps {
+  title: string;
+}
 
+export default function Header({ title }: HeaderProps) {
   return (
-    <header className="bg-blue-900 text-white">
-      <nav className="mx-auto max-w-6xl px-4 h-14 flex items-center justify-between">
-        <span className="font-semibold text-xl">CuidaBot</span>
-        <div className="flex gap-2">
-          <NavLink to="/" className={linkCls} end>Início</NavLink>
-          <NavLink to="/integrantes" className={linkCls}>Integrantes</NavLink>
-          <NavLink to="/faq" className={linkCls}>FAQ</NavLink>
-          <NavLink to="/contato" className={linkCls}>Contato</NavLink>
-          <NavLink to="/solucao" className={linkCls}>Solução</NavLink>
-        </div>
-      </nav>
+    <header className="bg-sky-900 py-4 text-white shadow">
+      <div className="mx-auto max-w-6xl px-4 flex justify-between items-center">
+        <h1 className="text-lg font-bold">{title}</h1>
+<nav className="flex gap-4 text-sm font-medium">
+  <Link to="/" className="hover:underline">Início</Link>
+  <Link to="/integrantes" className="hover:underline">Integrantes</Link>
+  <Link to="/faq" className="hover:underline">FAQ</Link>
+  <Link to="/contato" className="hover:underline">Contato</Link>
+  <Link to="/solucao" className="hover:underline">Solução</Link>
+</nav>
+
+      </div>
     </header>
   );
 }
